@@ -1,0 +1,125 @@
+@charset "utf-8";
+
+/*--------------------------------------------------------------------------------------------------
+CSS Styles for <Project Name>.
+--------------------------------------------------------------------------------------------------*/
+
+/* =Typography
+--------------------------------------------------------------------------------------------------*/
+
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/lato-black.woff2") format("woff2"), url("../fonts/lato-black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  color: #fff;
+  font-weight: normal;
+  font-family: Arial, Verdana, Helvetica, Sans-Serif;
+  font-size: 1rem;
+  background-color: #000;
+}
+
+/* End Typography
+--------------------------------------------------------------------------------------------------*/
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.block-video-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.block-bg {
+  position: absolute;
+  inset: 0 0;
+}
+
+.block-bg video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.block-text {
+  color: #fff;
+  font-family: "Lato";
+  font-weight: 900;
+  font-size: 12vw;
+  position: relative;
+}
+
+.block-text .line {
+  display: flex !important;
+  border: solid #000;
+  border-width: 0.5em 0.2em 0;
+  line-height: 0.5;
+}
+
+.block-text .line:nth-child(2) {
+  justify-content: space-between;
+}
+.block-text .line:nth-child(3) {
+  justify-content: flex-end;
+}
+.block-text .line:nth-child(4) .word {
+  width: 100%;
+}
+.block-text .line:nth-child(5) {
+  justify-content: flex-end;
+}
+.block-text .line:nth-child(5) .word:first-child {
+  margin-right: auto;
+}
+.block-text .line:last-child {
+  border-bottom-width: 1em;
+}
+
+.block-text .word {
+  padding: 0 0.1em 0.15em;
+  background-color: #000;
+  white-space: nowrap;
+  margin: -0.1em 0 0;
+}
+
+@media screen and (min-width: 768px) {
+  .block-text {
+    font-size: clamp(3rem, 8.3vw, 10rem);
+  }
+  .block-text br {
+    display: none;
+  }
+  .block-text .line:nth-child(1) .word:nth-child(3) {
+    margin-left: auto;
+  }
+  .block-text .line:nth-child(2),
+  .block-text .line:nth-child(3) {
+    justify-content: flex-start;
+  }
+  .block-text .line:nth-child(2) .word:nth-child(2) {
+    margin-left: auto;
+  }
+  .block-text .line:nth-child(3) .word:nth-child(4) {
+    margin-left: auto;
+  }
+  .block-text .line:nth-child(4) .word {
+    width: auto;
+  }
+}
